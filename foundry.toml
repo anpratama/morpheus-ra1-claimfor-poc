@@ -1,0 +1,15 @@
+[profile.default]
+src = "src"
+test = "test"
+out = "out"
+libs = ["lib"]
+solc = "0.8.20"
+
+# RPC is supplied by the runner via the ETH_RPC_URL environment variable
+# (any Ethereum mainnet archive endpoint). No endpoint or key is hardcoded.
+# The fork block itself is pinned inside the test (FORK_BLOCK), so the run
+# command does not need --fork-url / --fork-block-number flags:
+#
+#   ETH_RPC_URL=<your archive RPC> forge test
+[rpc_endpoints]
+mainnet = "${ETH_RPC_URL}"
